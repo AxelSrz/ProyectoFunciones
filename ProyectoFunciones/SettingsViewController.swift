@@ -25,6 +25,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet var fdFuncion: UITextField!
     @IBOutlet var btGuardar: UIButton!
     @IBOutlet var btCancelar: UIButton!
+    @IBOutlet weak var btValores: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +55,21 @@ class SettingsViewController: UIViewController {
     func quitaTeclado(){
         view.endEditing(true)
     }
-    
+
+    @IBAction func cambiarValores(sender: UIButton) {
+        
+        //asigna valores generados random del 0 al 50
+        
+        valores["constante1"] = Int(arc4random_uniform(51))
+        valores["constante2"] = Int(arc4random_uniform(51))
+        valores["constante3"] = Int(arc4random_uniform(51))
+        valores["constante4"] = Int(arc4random_uniform(51))
+        
+        fdCons1.text = String(valores["constante1"]!)
+        fdCons2.text = String(valores["constante2"]!)
+        fdCons3.text = String(valores["constante3"]!)
+        fdCons4.text = String(valores["constante4"]!)
+    }
 
     // MARK: - Navigation
 
@@ -76,6 +92,7 @@ class SettingsViewController: UIViewController {
             viewInicial.nombres = nombres
             viewInicial.valores = valores
         }
+        
     }
 
 }
