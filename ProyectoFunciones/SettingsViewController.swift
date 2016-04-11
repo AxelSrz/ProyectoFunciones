@@ -89,6 +89,7 @@ class SettingsViewController: UIViewController {
             valores["constante3"] = Int(fdCons3.text!)
             valores["constante4"] = Int(fdCons4.text!)
             
+            viewInicial.lbResultado.text = ""
             viewInicial.nombres = nombres
             viewInicial.valores = valores
         }
