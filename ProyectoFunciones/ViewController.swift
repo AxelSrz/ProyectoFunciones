@@ -45,6 +45,13 @@ class ViewController: UIViewController {
             viewAjustes.nombres = nombres
             viewAjustes.valores = valores
         }
+        else if segue.identifier == "simulacion"{
+            let viewSimulacion = segue.destinationViewController as! SimulacionViewController
+            viewSimulacion.c1 = valores["constante1"]!
+            viewSimulacion.c2 = valores["constante2"]!
+            viewSimulacion.cf1 = valores["constante3"]!
+            viewSimulacion.cf2 = valores["constante4"]!
+        }
     }
     
     @IBAction func btCalcular(sender: UIButton) {
@@ -73,6 +80,9 @@ class ViewController: UIViewController {
         lbTerceraAsignacionMain.text = "\(nombres["variable3"]!) = "
         lbLlamadaAFuncion.text = nombres["funcion"]!
         lbParametrosFuncion.text = "(\(nombres["variable1"]!), \(nombres["variable1"]!));"
+    }
+    
+    @IBAction func unwindSimulacion(sender: UIStoryboardSegue) {
     }
 
 

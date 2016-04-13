@@ -13,6 +13,7 @@
 		D195BFA81CADACF00040FFEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D195BFA71CADACF00040FFEF /* Assets.xcassets */; };
 		D195BFAB1CADACF00040FFEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D195BFA91CADACF00040FFEF /* LaunchScreen.storyboard */; };
 		D195BFB51CB0332A0040FFEF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BFB41CB0332A0040FFEF /* SettingsViewController.swift */; };
+		D1C50BA31CBDE616007CB311 /* SimulacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C50BA21CBDE616007CB311 /* SimulacionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D195BFAA1CADACF00040FFEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D195BFAC1CADACF00040FFEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D195BFB41CB0332A0040FFEF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D1C50BA21CBDE616007CB311 /* SimulacionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulacionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				D195BFA01CADACF00040FFEF /* AppDelegate.swift */,
 				D195BFA21CADACF00040FFEF /* ViewController.swift */,
 				D195BFA41CADACF00040FFEF /* Main.storyboard */,
+				D1C50BA21CBDE616007CB311 /* SimulacionViewController.swift */,
 				D195BFA71CADACF00040FFEF /* Assets.xcassets */,
 				D195BFA91CADACF00040FFEF /* LaunchScreen.storyboard */,
 				D195BFAC1CADACF00040FFEF /* Info.plist */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1C50BA31CBDE616007CB311 /* SimulacionViewController.swift in Sources */,
 				D195BFA31CADACF00040FFEF /* ViewController.swift in Sources */,
 				D195BFA11CADACF00040FFEF /* AppDelegate.swift in Sources */,
 				D195BFB51CB0332A0040FFEF /* SettingsViewController.swift in Sources */,
@@ -259,6 +263,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = axel.ProyectoFunciones;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -273,6 +278,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = axel.ProyectoFunciones;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
