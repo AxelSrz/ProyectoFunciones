@@ -60,10 +60,10 @@ class SettingsViewController: UIViewController {
         
         //asigna valores generados random del 0 al 50
         
-        valores["constante1"] = Int(arc4random_uniform(51))
-        valores["constante2"] = Int(arc4random_uniform(51))
-        valores["constante3"] = Int(arc4random_uniform(51))
-        valores["constante4"] = Int(arc4random_uniform(51))
+        valores["constante1"] = Int(arc4random_uniform(21))
+        valores["constante2"] = Int(arc4random_uniform(21))
+        valores["constante3"] = Int(arc4random_uniform(21))
+        valores["constante4"] = Int(arc4random_uniform(21))
         
         fdCons1.text = String(valores["constante1"]!)
         fdCons2.text = String(valores["constante2"]!)
