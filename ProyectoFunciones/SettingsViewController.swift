@@ -58,7 +58,7 @@ class SettingsViewController: UIViewController {
 
     @IBAction func cambiarValores(sender: UIButton) {
         
-        //asigna valores generados random del 0 al 50
+        //asigna valores generados random del 0 al 20
         
         valores["constante1"] = Int(arc4random_uniform(21))
         valores["constante2"] = Int(arc4random_uniform(21))
@@ -89,6 +89,7 @@ class SettingsViewController: UIViewController {
             valores["constante3"] = Int(fdCons3.text!)
             valores["constante4"] = Int(fdCons4.text!)
             
+            viewInicial.lbResultado.text = ""
             viewInicial.nombres = nombres
             viewInicial.valores = valores
         }

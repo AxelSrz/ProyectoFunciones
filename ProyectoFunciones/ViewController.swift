@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet var lbTerceraAsignacionMain: UILabel!
     @IBOutlet var lbLlamadaAFuncion: UILabel!
     @IBOutlet var lbParametrosFuncion: UILabel!
+    @IBOutlet weak var lbResultado: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,17 @@ class ViewController: UIViewController {
             viewAjustes.nombres = nombres
             viewAjustes.valores = valores
         }
+    }
+    
+    @IBAction func btCalcular(sender: UIButton) {
+        var resultado: Int = 0
+        var f1 : Int = 0
+        var f2 : Int = 0
+        
+        f1 = valores["constante1"]! + valores["constante3"]!
+        f2 = valores["constante2"]! + valores["constante4"]!
+        resultado = f1 + f2
+        lbResultado.text = String(resultado)
     }
     
     @IBAction func unwindAjustes(sender: UIStoryboardSegue) {
