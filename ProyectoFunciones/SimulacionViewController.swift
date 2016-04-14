@@ -58,13 +58,13 @@ class SimulacionViewController: UIViewController {
         lbNvar.text = v1
         lbNvar2.text = v2
         lbNvar3.text = v3
-        lb1.text = v1 + " = " + String(c1)
-        lb2.text = v2 + " = " + String(c2)
+        lb1.text = v1 + " = " + String(c1) + ";"
+        lb2.text = v2 + " = " + String(c2) + ";"
         lb31.text = v3 + " = "
         lb32.text = " (" + v1 + ", " + v2 + ");"
-        lb5.text = f1 + " = " + f1 + " + " + String(cf1)
-        lb6.text = f2 + " = " + f2 + " + " + String(cf2)
-        lb7.text = "result = " + f1 + " + " + f2
+        lb5.text = f1 + " = " + f1 + " + " + String(cf1) + ";"
+        lb6.text = f2 + " = " + f2 + " + " + String(cf2) + ";"
+        lb7.text = "result = " + f1 + " + " + f2 + ";"
         lb91.text = v1
         lb92.text = v2
         lb93.text = v3
