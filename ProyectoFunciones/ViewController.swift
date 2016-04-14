@@ -51,6 +51,12 @@ class ViewController: UIViewController {
             viewSimulacion.c2 = valores["constante2"]!
             viewSimulacion.cf1 = valores["constante3"]!
             viewSimulacion.cf2 = valores["constante4"]!
+            viewSimulacion.f1 = nombres["varf1"]!
+            viewSimulacion.f2 = nombres["varf2"]!
+            viewSimulacion.v1 = nombres["variable1"]!
+            viewSimulacion.v2 = nombres["variable2"]!
+            viewSimulacion.v3 = nombres["variable3"]!
+            viewSimulacion.funcion = nombres["funcion"]!
         }
     }
     

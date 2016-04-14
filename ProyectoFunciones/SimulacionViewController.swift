@@ -11,6 +11,7 @@ import UIKit
 class SimulacionViewController: UIViewController {
     var instruccion = 0
     var c1 = 0, c2 = 0, cf1 = 0, cf2 = 0
+    var f1 = "", f2 = "", v1 = "", v2 = "", v3 = "", funcion = ""
     var newHighlight: CGRect?
 
     @IBOutlet var lb01: UILabel!
@@ -33,18 +34,50 @@ class SimulacionViewController: UIViewController {
     @IBOutlet var lbF1Value: UILabel!
     @IBOutlet var lbF2Value: UILabel!
     @IBOutlet var lbResultValue: UILabel!
+    @IBOutlet weak var lbNf1: UILabel!
+    @IBOutlet weak var lbNf2: UILabel!
+    @IBOutlet weak var lbNvar: UILabel!
+    @IBOutlet weak var lbNvar2: UILabel!
+    @IBOutlet weak var lbNvar3: UILabel!
+    @IBOutlet weak var lbNfunc1: UILabel!
+    @IBOutlet weak var lbNfunc2: UILabel!
     
+    @IBOutlet weak var lb91: UILabel!
+    @IBOutlet weak var lb92: UILabel!
+    @IBOutlet weak var lb93: UILabel!
+    @IBOutlet weak var lb10: UILabel!
+    @IBOutlet weak var lb101: UILabel!
     @IBOutlet var bgImg: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         bgImg.image = UIImage(named: "color")
+        lbNf1.text = f1
+        lbNf2.text = f2
+        lbNvar.text = v1
+        lbNvar2.text = v2
+        lbNvar3.text = v3
+        lb1.text = v1 + " = " + String(c1)
+        lb2.text = v2 + " = " + String(c2)
+        lb31.text = v3 + " = "
+        lb32.text = " (" + v1 + ", " + v2 + ");"
+        lb5.text = f1 + " = " + f1 + " + " + String(cf1)
+        lb6.text = f2 + " = " + f2 + " + " + String(cf2)
+        lb7.text = "result = " + f1 + " + " + f2
+        lb91.text = v1
+        lb92.text = v2
+        lb93.text = v3
+        lb10.text = f1
+        lb101.text = f2
+        lbNfunc1.text = funcion
+        lbNfunc2.text = funcion
     }
     
     override func viewDidLayoutSubviews() {
         if let highlight = newHighlight {
             bgImg.frame = highlight
+            
         }
     }
 
