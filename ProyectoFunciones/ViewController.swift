@@ -85,7 +85,7 @@ class ViewController: UIViewController {
         lbSegundaAsignacionMain.text = "\(nombres["variable2"]!) = \(valores["constante2"]!);"
         lbTerceraAsignacionMain.text = "\(nombres["variable3"]!) = "
         lbLlamadaAFuncion.text = nombres["funcion"]!
-        lbParametrosFuncion.text = "(\(nombres["variable1"]!), \(nombres["variable1"]!));"
+        lbParametrosFuncion.text = "(\(nombres["variable1"]!), \(nombres["variable2"]!));"
     }
     
     @IBAction func unwindSimulacion(sender: UIStoryboardSegue) {
