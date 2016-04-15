@@ -72,6 +72,7 @@ class SimulacionViewController: UIViewController {
         lb101.text = f2
         lbNfunc1.text = funcion
         lbNfunc2.text = funcion
+        ejecutaInstruccion()
     }
     
     override func viewDidLayoutSubviews() {
