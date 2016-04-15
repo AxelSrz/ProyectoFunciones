@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var nombres : [String: String] = ["variable1" : "var", "variable2" : "var2", "variable3" : "var3", "funcion" : "funcion", "varf1" : "f1", "varf2" : "f2"]
+    var nombres : [String: String] = ["variable1" : "var", "variable2" : "var2", "variable3" : "var3", "funcion" : "function", "varf1" : "f1", "varf2" : "f2"]
     var valores : [String: Int] = ["constante1" : 5, "constante2" : 5, "constante3" : 5, "constante4" : 5]
 
     @IBOutlet var lbFuncion: UILabel!
