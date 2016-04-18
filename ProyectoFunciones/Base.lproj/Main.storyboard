@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TPa-Nj-Wuz">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1084,22 +1084,6 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.95881346180000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OkG-gf-Zfw">
-                                <rect key="frame" x="397" y="662" width="50" height="50"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Next">
-                                            <attributes>
-                                                <font key="NSFont" size="12" name="Helvetica"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="btSiguiente:" destination="oxl-uZ-WX4" eventType="touchUpInside" id="6Eo-Fm-HyB"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6qC-mi-FIi">
                                 <rect key="frame" x="57" y="295" width="153" height="24"/>
                             </imageView>
@@ -1122,25 +1106,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cnu-Xf-BmG">
-                                <rect key="frame" x="207" y="662" width="50" height="50"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Back">
-                                            <attributes>
-                                                <font key="NSFont" size="12" name="Helvetica"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OkG-gf-Zfw">
+                                <rect key="frame" x="350" y="662" width="50" height="50"/>
+                                <state key="normal" image="next">
+                                    <attributedString key="attributedTitle"/>
                                 </state>
+                                <connections>
+                                    <action selector="btSiguiente:" destination="oxl-uZ-WX4" eventType="touchUpInside" id="6Eo-Fm-HyB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cnu-Xf-BmG">
+                                <rect key="frame" x="173" y="662" width="50" height="50"/>
+                                <state key="normal" image="back"/>
                                 <connections>
                                     <action selector="btAnterior:" destination="oxl-uZ-WX4" eventType="touchUpInside" id="mdN-VC-jaW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ec-0Z-5lb">
-                                <rect key="frame" x="306" y="662" width="50" height="50"/>
-                                <state key="normal">
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ec-0Z-5lb">
+                                <rect key="frame" x="265" y="662" width="50" height="50"/>
+                                <state key="normal" image="play">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Play">
                                             <attributes>
@@ -1170,7 +1154,6 @@
                             <constraint firstItem="YHD-CD-nxJ" firstAttribute="top" secondItem="m6H-VH-hbp" secondAttribute="bottom" constant="8" symbolic="YES" id="9CA-gr-GAU"/>
                             <constraint firstItem="HhZ-mJ-cgT" firstAttribute="baseline" secondItem="4gX-4t-ctf" secondAttribute="baseline" id="9bZ-gP-8nW"/>
                             <constraint firstItem="tAU-BY-kcZ" firstAttribute="baseline" secondItem="5gd-Hm-L1r" secondAttribute="baseline" id="9jt-mc-uKr"/>
-                            <constraint firstItem="PeT-MB-c1o" firstAttribute="top" secondItem="cnu-Xf-BmG" secondAttribute="bottom" constant="56" id="Alk-Xw-zeq"/>
                             <constraint firstItem="Yti-vk-wbp" firstAttribute="top" secondItem="4gX-4t-ctf" secondAttribute="bottom" constant="28" id="AxC-36-Sfs"/>
                             <constraint firstItem="WQz-Oa-5ow" firstAttribute="leading" secondItem="mMr-mR-MVa" secondAttribute="leading" id="B0f-mG-MfW"/>
                             <constraint firstItem="ciZ-nP-uL4" firstAttribute="baseline" secondItem="KzX-Oj-iqV" secondAttribute="baseline" id="B7i-Oo-man"/>
@@ -1180,7 +1163,6 @@
                             <constraint firstItem="eHH-Vd-Dr3" firstAttribute="top" secondItem="Yti-vk-wbp" secondAttribute="bottom" constant="8" symbolic="YES" id="CdP-rz-6fc"/>
                             <constraint firstItem="dKX-oL-edj" firstAttribute="top" secondItem="m6H-VH-hbp" secondAttribute="bottom" constant="10" id="CsV-XI-Pik"/>
                             <constraint firstItem="lOW-od-UfJ" firstAttribute="top" secondItem="2qO-4G-lha" secondAttribute="bottom" constant="14" id="D6N-EJ-KK8"/>
-                            <constraint firstItem="PeT-MB-c1o" firstAttribute="top" secondItem="2Ec-0Z-5lb" secondAttribute="bottom" constant="56" id="DSM-Ll-cnU"/>
                             <constraint firstItem="3dr-6d-i2F" firstAttribute="leading" secondItem="Ub3-Zb-kio" secondAttribute="leading" id="Daw-tM-LBN"/>
                             <constraint firstItem="lOW-od-UfJ" firstAttribute="baseline" secondItem="mMr-mR-MVa" secondAttribute="baseline" id="Do6-8n-01A"/>
                             <constraint firstItem="tAU-BY-kcZ" firstAttribute="leading" secondItem="HEB-zt-dkK" secondAttribute="trailing" constant="8" id="EUk-Lg-G0Z"/>
@@ -1233,7 +1215,6 @@
                             <constraint firstItem="hiT-4v-lRa" firstAttribute="leading" secondItem="m6H-VH-hbp" secondAttribute="leading" id="Z3B-bM-HlV"/>
                             <constraint firstItem="A7k-R8-RCO" firstAttribute="leading" secondItem="CM6-6K-NBq" secondAttribute="leading" id="Zfj-SB-m47"/>
                             <constraint firstItem="Ub3-Zb-kio" firstAttribute="top" secondItem="3dr-6d-i2F" secondAttribute="bottom" constant="8" symbolic="YES" id="a4H-O5-mAQ"/>
-                            <constraint firstItem="PeT-MB-c1o" firstAttribute="top" secondItem="OkG-gf-Zfw" secondAttribute="bottom" constant="56" id="aNv-hs-Plb"/>
                             <constraint firstItem="HhZ-mJ-cgT" firstAttribute="baseline" secondItem="zyA-rs-lP3" secondAttribute="baseline" id="aaM-dt-YX4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wPB-ei-o5X" secondAttribute="trailing" constant="73" id="asV-SB-ezc"/>
                             <constraint firstItem="RUN-hM-mVj" firstAttribute="leading" secondItem="BnR-f0-F8D" secondAttribute="leading" id="bTl-8F-53R"/>
