@@ -9,6 +9,8 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+
+    //arreglos para los strings de las variables e ints de las constantes
     
     var nombres : [String: String] = [:]
     var valores : [String: Int] = [:]
@@ -32,6 +34,8 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //se asignan a las labels de este controller el nombre/valor actual de la variable/constante
         fdVar1.text = nombres["variable1"]!
         fdVar2.text = nombres["variable2"]!
         fdVar3.text = nombres["variable3"]!
@@ -43,6 +47,7 @@ class SettingsViewController: UIViewController {
         fdCons3.text = String(valores["constante3"]!)
         fdCons4.text = String(valores["constante4"]!)
         
+        //quitar el teclado con un tap en la pantalla
         let tap = UITapGestureRecognizer(target: self, action: "quitaTeclado")
         view.addGestureRecognizer(tap)
     }
@@ -52,10 +57,12 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //la funcion para quitar el teclado
     func quitaTeclado(){
         view.endEditing(true)
     }
 
+    //si se oprime el boton de valores
     @IBAction func cambiarValores(sender: UIButton) {
         
         //asigna valores generados random del 0 al 20
@@ -75,9 +82,11 @@ class SettingsViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //si se oprime guardar
         if sender as! UIButton == btGuardar{
             let viewInicial : ViewController = segue.destinationViewController as! ViewController
             
+            //los cambios a los nombres o valores se registran en los arreglos
             nombres["variable1"] = fdVar1.text!
             nombres["variable2"] = fdVar2.text!
             nombres["variable3"] = fdVar3.text!
@@ -89,6 +98,7 @@ class SettingsViewController: UIViewController {
             valores["constante3"] = Int(fdCons3.text!)
             valores["constante4"] = Int(fdCons4.text!)
             
+            //se regresan esos nuevos valores al controller inicial
             viewInicial.lbResultado.text = ""
             viewInicial.nombres = nombres
             viewInicial.valores = valores
