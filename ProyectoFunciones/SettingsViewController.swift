@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITextFieldDelegate {
     
     var nombres : [String: String] = [:]
     var valores : [String: Int] = [:]
@@ -45,11 +45,26 @@ class SettingsViewController: UIViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: "quitaTeclado")
         view.addGestureRecognizer(tap)
+        
+        fdCons1.delegate = self
+        fdCons1.keyboardType = .NumberPad
+        fdCons2.delegate = self
+        fdCons2.keyboardType = .NumberPad
+        fdCons3.delegate = self
+        fdCons3.keyboardType = .NumberPad
+        fdCons4.delegate = self
+        fdCons4.keyboardType = .NumberPad
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //funcion que revisa que haya solo numeros en los text fields de las constantes
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let invalidCharacters = NSCharacterSet(charactersInString: "0123456789").invertedSet
+        return string.rangeOfCharacterFromSet(invalidCharacters, options: [], range: string.startIndex ..< string.endIndex) == nil
     }
     
     func quitaTeclado(){
