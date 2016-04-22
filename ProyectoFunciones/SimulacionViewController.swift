@@ -14,7 +14,7 @@ class SimulacionViewController: UIViewController {
     
     //variables para ir siguiendo los datos de la funcion/main
     var c1 = 0, c2 = 0, cf1 = 0, cf2 = 0
-    var f1 = "", f2 = "", v1 = "", v2 = "", v3 = "", funcion = ""
+    var f1 = "", f2 = "", v1 = "", v2 = "", v3 = "", funcion = "", result = ""
     var newHighlight: CGRect?
 
     @IBOutlet var lb01: UILabel!
@@ -69,9 +69,11 @@ class SimulacionViewController: UIViewController {
         lb2.text = v2 + " = " + String(c2) + ";"
         lb31.text = v3 + " = "
         lb32.text = " (" + v1 + ", " + v2 + ");"
+        lb42.text = result + ";"
         lb5.text = f1 + " = " + f1 + " + " + String(cf1) + ";"
         lb6.text = f2 + " = " + f2 + " + " + String(cf2) + ";"
-        lb7.text = "result = " + f1 + " + " + f2 + ";"
+        lb7.text = result + " = " + f1 + " + " + f2 + ";"
+        lb82.text = result + ";"
         lb91.text = v1
         lb92.text = v2
         lb93.text = v3

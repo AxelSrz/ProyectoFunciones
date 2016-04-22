@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     //arreglos para almacenar los nombres de las variables y los valores de las constantes
-    var nombres : [String: String] = ["variable1" : "var", "variable2" : "var2", "variable3" : "var3", "funcion" : "function", "varf1" : "f1", "varf2" : "f2"]
+    var nombres : [String: String] = ["variable1" : "var", "variable2" : "var2", "variable3" : "var3", "funcion" : "function", "varf1" : "f1", "varf2" : "f2", "result" : "result"]
     var valores : [String: Int] = ["constante1" : 5, "constante2" : 5, "constante3" : 5, "constante4" : 5]
 
     @IBOutlet var lbFuncion: UILabel!
@@ -28,6 +28,8 @@ class ViewController: UIViewController {
     @IBOutlet var lbTerceraAsignacionMain: UILabel!
     @IBOutlet var lbLlamadaAFuncion: UILabel!
     @IBOutlet var lbParametrosFuncion: UILabel!
+    @IBOutlet var lbReturnResult: UILabel!
+    @IBOutlet var lbReturnResult2: UILabel!
     @IBOutlet weak var lbResultado: UILabel!
     
     override func viewDidLoad() {
@@ -59,6 +61,7 @@ class ViewController: UIViewController {
             viewSimulacion.v1 = nombres["variable1"]!
             viewSimulacion.v2 = nombres["variable2"]!
             viewSimulacion.v3 = nombres["variable3"]!
+            viewSimulacion.result = nombres["result"]!
             viewSimulacion.funcion = nombres["funcion"]!
         }
     }
@@ -82,7 +85,7 @@ class ViewController: UIViewController {
         lbVarFunc2.text = nombres["varf2"]!
         lbPrimeraAsignacionFuncion.text = "\(nombres["varf1"]!) = \(nombres["varf1"]!) + \(valores["constante3"]!);"
         lbSegundaAsignacionFuncion.text = "\(nombres["varf2"]!) = \(nombres["varf2"]!) + \(valores["constante4"]!);"
-        lbResultadoFuncion.text = "result = \(nombres["varf1"]!) + \(nombres["varf2"]!);"
+        lbResultadoFuncion.text = nombres["result"]! + " = \(nombres["varf1"]!) + \(nombres["varf2"]!);"
         lbVar1.text = nombres["variable1"]!
         lbVar2.text = nombres["variable2"]!
         lbVar3.text = nombres["variable3"]!
@@ -91,6 +94,8 @@ class ViewController: UIViewController {
         lbTerceraAsignacionMain.text = "\(nombres["variable3"]!) = "
         lbLlamadaAFuncion.text = nombres["funcion"]!
         lbParametrosFuncion.text = "(\(nombres["variable1"]!), \(nombres["variable2"]!));"
+        lbReturnResult.text = nombres["result"]! + ";"
+        lbReturnResult2.text = nombres["result"]! + ";"
     }
     
     @IBAction func unwindSimulacion(sender: UIStoryboardSegue) {

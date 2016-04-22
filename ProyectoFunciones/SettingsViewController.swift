@@ -24,6 +24,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var fdCons3: UITextField!
     @IBOutlet var fdCons4: UITextField!
     @IBOutlet var fdFuncion: UITextField!
+    @IBOutlet var fdResult: UITextField!
     @IBOutlet var btGuardar: UIButton!
     @IBOutlet var btCancelar: UIButton!
     @IBOutlet weak var btValores: UIButton!
@@ -41,6 +42,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         fdVarF1.text = nombres["varf1"]!
         fdVarF2.text = nombres["varf2"]!
         fdFuncion.text = nombres["funcion"]!
+        fdResult.text = nombres["result"]!
         fdCons1.text = String(valores["constante1"]!)
         fdCons2.text = String(valores["constante2"]!)
         fdCons3.text = String(valores["constante3"]!)
@@ -108,6 +110,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             nombres["varf1"] = fdVarF1.text!
             nombres["varf2"] = fdVarF2.text!
             nombres["funcion"] = fdFuncion.text!
+            nombres["result"] = fdResult.text!
             valores["constante1"] = Int(fdCons1.text!)
             valores["constante2"] = Int(fdCons2.text!)
             valores["constante3"] = Int(fdCons3.text!)
