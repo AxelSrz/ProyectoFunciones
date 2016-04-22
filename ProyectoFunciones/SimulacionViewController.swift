@@ -9,7 +9,10 @@
 import UIKit
 
 class SimulacionViewController: UIViewController {
+    //variable que guia la simulacion
     var instruccion = 0
+    
+    //variables para ir siguiendo los datos de la funcion/main
     var c1 = 0, c2 = 0, cf1 = 0, cf2 = 0
     var f1 = "", f2 = "", v1 = "", v2 = "", v3 = "", funcion = ""
     var newHighlight: CGRect?
@@ -49,10 +52,13 @@ class SimulacionViewController: UIViewController {
     @IBOutlet weak var lb10: UILabel!
     @IBOutlet weak var lb101: UILabel!
     @IBOutlet var bgImg: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //se asignan los datos de las labels
         bgImg.image = UIImage(named: "color")
         lbNf1.text = f1
         lbNf2.text = f2
@@ -77,6 +83,7 @@ class SimulacionViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        //se actualiza la imagen que sera el highlight
         if let highlight = newHighlight {
             bgImg.frame = highlight
             
@@ -88,18 +95,23 @@ class SimulacionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //si se presiona next la simulacion avanza una vez
     @IBAction func btSiguiente(sender: UIButton) {
         if instruccion < 8{
             instruccion += 1
         }
         ejecutaInstruccion()
     }
+    
+    //si se presiona back la simulacion se regresa una vez
     @IBAction func btAnterior(sender: UIButton) {
         if instruccion > 0{
             instruccion -= 1
         }
         ejecutaInstruccion()
     }
+    
+    //funcion que controla la simulacion y las variables que se van modificando en cada paso
     func ejecutaInstruccion() {
         switch instruccion {
             case 0:
@@ -225,7 +237,7 @@ class SimulacionViewController: UIViewController {
         }
     }
     
-    
+    //funcion que cambia el tamaño del highlight al avanzar/retroceder
     func imageResize(image image:UIImage, sizeChange:CGSize)-> UIImage{
         
         let hasAlpha = true

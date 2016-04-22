@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController, UITextFieldDelegate {
     
+    //arreglos para los nombres de las variables y los valores de las constantes
     var nombres : [String: String] = [:]
     var valores : [String: Int] = [:]
 
@@ -32,6 +33,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // se asignan los valores/nombres a las labels
         fdVar1.text = nombres["variable1"]!
         fdVar2.text = nombres["variable2"]!
         fdVar3.text = nombres["variable3"]!
@@ -43,9 +46,11 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         fdCons3.text = String(valores["constante3"]!)
         fdCons4.text = String(valores["constante4"]!)
         
+        //para quitar el teclado con un tap
         let tap = UITapGestureRecognizer(target: self, action: "quitaTeclado")
         view.addGestureRecognizer(tap)
         
+        //las labels con constantes se les cambian el tipo de pad
         fdCons1.delegate = self
         fdCons1.keyboardType = .NumberPad
         fdCons2.delegate = self
@@ -67,10 +72,12 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         return string.rangeOfCharacterFromSet(invalidCharacters, options: [], range: string.startIndex ..< string.endIndex) == nil
     }
     
+    //funcion para quitar el teclado
     func quitaTeclado(){
         view.endEditing(true)
     }
 
+    //si se oprime generar valores
     @IBAction func cambiarValores(sender: UIButton) {
         
         //asigna valores generados random del 0 al 20
@@ -90,6 +97,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        //al presionar guardar se actualizan los nuevos valores/nombres en los arreglos y se asignan a las labels
         if sender as! UIButton == btGuardar{
             let viewInicial : ViewController = segue.destinationViewController as! ViewController
             

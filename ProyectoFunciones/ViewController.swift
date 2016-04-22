@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //arreglos para almacenar los nombres de las variables y los valores de las constantes
     var nombres : [String: String] = ["variable1" : "var", "variable2" : "var2", "variable3" : "var3", "funcion" : "function", "varf1" : "f1", "varf2" : "f2"]
     var valores : [String: Int] = ["constante1" : 5, "constante2" : 5, "constante3" : 5, "constante4" : 5]
 
@@ -40,11 +41,13 @@ class ViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //si se va a ajustes se actualizan las variables
         if segue.identifier == "Ajustes"{
             let viewAjustes = segue.destinationViewController as! SettingsViewController
             viewAjustes.nombres = nombres
             viewAjustes.valores = valores
         }
+        //si se va a la simulacion se actualizan las variables
         else if segue.identifier == "simulacion"{
             let viewSimulacion = segue.destinationViewController as! SimulacionViewController
             viewSimulacion.c1 = valores["constante1"]!
@@ -60,6 +63,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //si se presiona el boton calcular
     @IBAction func btCalcular(sender: UIButton) {
         var resultado: Int = 0
         var f1 : Int = 0
@@ -71,6 +75,7 @@ class ViewController: UIViewController {
         lbResultado.text = String(resultado)
     }
     
+    //la informacion que se recibe de los ajustes se actualiza
     @IBAction func unwindAjustes(sender: UIStoryboardSegue) {
         lbFuncion.text = nombres["funcion"]!
         lbVarFunc1.text = nombres["varf1"]!
