@@ -30,7 +30,19 @@ class ViewController: UIViewController {
     @IBOutlet var lbParametrosFuncion: UILabel!
     @IBOutlet var lbReturnResult: UILabel!
     @IBOutlet var lbReturnResult2: UILabel!
-    @IBOutlet weak var lbResultado: UILabel!
+    @IBOutlet var lbResultVar3: UILabel!
+    @IBOutlet var lbTotalVar3: UILabel!
+    @IBOutlet var lbTotalVar2: UILabel!
+    @IBOutlet var lbResultVar2: UILabel!
+    @IBOutlet var lbTotalVar1: UILabel!
+    @IBOutlet var lbResultVar1: UILabel!
+    @IBOutlet var lbTotalF1: UILabel!
+    @IBOutlet var lbTotalF2: UILabel!
+    @IBOutlet var lbTotalResult: UILabel!
+    @IBOutlet var lbResultF1: UILabel!
+    @IBOutlet var lbResultF2: UILabel!
+    @IBOutlet var lbResultResult: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +87,12 @@ class ViewController: UIViewController {
         f1 = valores["constante1"]! + valores["constante3"]!
         f2 = valores["constante2"]! + valores["constante4"]!
         resultado = f1 + f2
-        lbResultado.text = String(resultado)
+        lbResultVar3.text = String(resultado)
+        lbResultVar2.text = String(valores["constante2"]!)
+        lbResultVar1.text = String(valores["constante1"]!)
+        lbResultF1.text = String(f1)
+        lbResultF2.text = String(f2)
+        lbResultResult.text = String(resultado)
     }
     
     //la informacion que se recibe de los ajustes se actualiza
@@ -96,6 +113,13 @@ class ViewController: UIViewController {
         lbParametrosFuncion.text = "(\(nombres["variable1"]!), \(nombres["variable2"]!));"
         lbReturnResult.text = nombres["result"]! + ";"
         lbReturnResult2.text = nombres["result"]! + ";"
+        lbTotalVar3.text = nombres["variable3"]! + ":"
+        lbTotalVar2.text = nombres["variable2"]! + ":"
+        lbTotalVar1.text = nombres["variable1"]! + ":"
+        lbTotalF1.text = nombres["varf1"]! + ":"
+        lbTotalF2.text = nombres["varf2"]! + ":"
+        lbTotalResult.text = nombres["result"]! + ":"
+        
     }
     
     @IBAction func unwindSimulacion(sender: UIStoryboardSegue) {

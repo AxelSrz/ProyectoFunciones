@@ -39,13 +39,13 @@ class SimulacionViewController: UIViewController {
     @IBOutlet var lbResultValue: UILabel!
     @IBOutlet weak var lbNf1: UILabel!
     @IBOutlet weak var lbNf2: UILabel!
-    @IBOutlet weak var lbNresult: UILabel!
+    
     @IBOutlet weak var lbNvar: UILabel!
     @IBOutlet weak var lbNvar2: UILabel!
     @IBOutlet weak var lbNvar3: UILabel!
     @IBOutlet weak var lbNfunc1: UILabel!
     @IBOutlet weak var lbNfunc2: UILabel!
-    
+    @IBOutlet weak var lbNresult: UILabel!
     @IBOutlet weak var lb91: UILabel!
     @IBOutlet weak var lb92: UILabel!
     @IBOutlet weak var lb93: UILabel!
@@ -65,6 +65,7 @@ class SimulacionViewController: UIViewController {
         lbNvar.text = v1
         lbNvar2.text = v2
         lbNvar3.text = v3
+        lbNresult.text = result
         lb1.text = v1 + " = " + String(c1) + ";"
         lb2.text = v2 + " = " + String(c2) + ";"
         lb31.text = v3 + " = "

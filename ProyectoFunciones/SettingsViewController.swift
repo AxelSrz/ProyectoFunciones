@@ -139,7 +139,12 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             valores["constante3"] = Int(fdCons3.text!)
             valores["constante4"] = Int(fdCons4.text!)
             
-            viewInicial.lbResultado.text = ""
+            viewInicial.lbResultVar3.text = ""
+            viewInicial.lbResultVar2.text = ""
+            viewInicial.lbResultVar1.text = ""
+            viewInicial.lbResultF1.text = ""
+            viewInicial.lbResultF2.text = ""
+            viewInicial.lbResultResult.text = ""
             viewInicial.nombres = nombres
             viewInicial.valores = valores
         }
