@@ -61,6 +61,29 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         fdCons3.keyboardType = .NumberPad
         fdCons4.delegate = self
         fdCons4.keyboardType = .NumberPad
+        
+        //se quita el autocorrect a los textfields de las variables
+        fdVar1.autocorrectionType = .No
+        fdVar1.autocapitalizationType = .None
+        fdVar1.spellCheckingType = .No
+        fdVar2.autocorrectionType = .No
+        fdVar2.autocapitalizationType = .None
+        fdVar2.spellCheckingType = .No
+        fdVar3.autocorrectionType = .No
+        fdVar3.autocapitalizationType = .None
+        fdVar3.spellCheckingType = .No
+        fdVarF1.autocorrectionType = .No
+        fdVarF1.autocapitalizationType = .None
+        fdVarF1.spellCheckingType = .No
+        fdVarF2.autocorrectionType = .No
+        fdVarF2.autocapitalizationType = .None
+        fdVarF2.spellCheckingType = .No
+        fdFuncion.autocorrectionType = .No
+        fdFuncion.autocapitalizationType = .None
+        fdFuncion.spellCheckingType = .No
+        fdResult.autocorrectionType = .No
+        fdResult.autocapitalizationType = .None
+        fdResult.spellCheckingType = .No
     }
 
     override func didReceiveMemoryWarning() {
