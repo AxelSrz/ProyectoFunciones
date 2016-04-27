@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TPa-Nj-Wuz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TPa-Nj-Wuz">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1189,9 +1189,6 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.95881346180000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6qC-mi-FIi">
-                                <rect key="frame" x="57" y="295" width="153" height="24"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnR-f0-F8D">
                                 <rect key="frame" x="699" y="141" width="32" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1259,6 +1256,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6qC-mi-FIi">
+                                <rect key="frame" x="57" y="295" width="153" height="24"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.28093609619999999" green="0.27583576069999999" blue="0.29220917019999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1438,8 +1438,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="128" height="128"/>
-        <image name="next" width="128" height="128"/>
-        <image name="play" width="118" height="128"/>
+        <image name="back" width="512" height="512"/>
+        <image name="next" width="512" height="512"/>
+        <image name="play" width="512" height="512"/>
     </resources>
 </document>

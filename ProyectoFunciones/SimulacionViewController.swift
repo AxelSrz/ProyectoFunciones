@@ -82,6 +82,21 @@ class SimulacionViewController: UIViewController {
         lb101.text = f2
         lbNfunc1.text = funcion
         lbNfunc2.text = funcion
+        
+        //se ocultan las variables que no ha simulado
+        lbNf1.hidden = true
+        lbNf2.hidden = true
+        lbNvar.hidden = true
+        lbNvar2.hidden = true
+        lbNvar3.hidden = true
+        lbNresult.hidden = true
+        lbF1Value.hidden = true
+        lbF2Value.hidden = true
+        lbVar1Value.hidden = true
+        lbVar2Value.hidden = true
+        lbVar3Value.hidden = true
+        lbResultValue.hidden = true
+        
         ejecutaInstruccion()
     }
     
@@ -121,6 +136,19 @@ class SimulacionViewController: UIViewController {
                 UIView.animateWithDuration(0.5, delay: 0, options: .CurveLinear, animations: {
                     self.bgImg.frame = CGRectMake(self.lb01.frame.origin.x,self.lb01.frame.origin.y,self.lb02.frame.origin.x + self.lb02.frame.width - self.lb01.frame.origin.x,self.lb01.frame.height)
                     }, completion: { finished in
+                        self.lbVar1Value.hidden = false
+                        self.lbVar2Value.hidden = false
+                        self.lbVar3Value.hidden = false
+                        self.lbNvar.hidden = false
+                        self.lbNvar2.hidden = false
+                        self.lbNvar3.hidden = false
+                        self.lbNf1.hidden = true
+                        self.lbNf2.hidden = true
+                        self.lbNresult.hidden = true
+                        self.lbF1Value.hidden = true
+                        self.lbF2Value.hidden = true
+                        self.lbResultValue.hidden = true
+
                         self.lbVar1Value.text = "-"
                         self.lbVar2Value.text = "-"
                         self.lbVar3Value.text = "-"
@@ -161,6 +189,12 @@ class SimulacionViewController: UIViewController {
                 UIView.animateWithDuration(0.5, delay: 0, options: .CurveLinear, animations: {
                     self.bgImg.frame = CGRectMake(self.lb31.frame.origin.x,self.lb31.frame.origin.y,self.lb32.frame.origin.x + self.lb32.frame.width - self.lb31.frame.origin.x,self.lb31.frame.height)
                     }, completion: { finished in
+                        self.lbNf1.hidden = true
+                        self.lbNf2.hidden = true
+                        self.lbNresult.hidden = true
+                        self.lbF1Value.hidden = true
+                        self.lbF2Value.hidden = true
+                        self.lbResultValue.hidden = true
                         self.lbVar1Value.text = "\(self.c1)"
                         self.lbVar2Value.text = "\(self.c2)"
                         self.lbVar3Value.text = "-"
@@ -174,6 +208,12 @@ class SimulacionViewController: UIViewController {
                 UIView.animateWithDuration(0.5, delay: 0, options: .CurveLinear, animations: {
                     self.bgImg.frame = CGRectMake(self.lb41.frame.origin.x,self.lb41.frame.origin.y,self.lb42.frame.origin.x + self.lb42.frame.width - self.lb41.frame.origin.x,self.lb41.frame.height)
                     }, completion: { finished in
+                        self.lbResultValue.hidden = false
+                        self.lbF1Value.hidden = false
+                        self.lbF2Value.hidden = false
+                        self.lbNf2.hidden = false
+                        self.lbNf1.hidden = false
+                        self.lbNresult.hidden = false
                         self.lbVar1Value.text = "\(self.c1)"
                         self.lbVar2Value.text = "\(self.c2)"
                         self.lbVar3Value.text = "-"
