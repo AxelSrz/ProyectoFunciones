@@ -13,6 +13,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //arreglos para los nombres de las variables y los valores de las constantes
     var nombres : [String: String] = [:]
     var valores : [String: Int] = [:]
+    
+    //variable que checa cual textfield esta activo
+    var activeField = UITextField()
 
     @IBOutlet var fdVar1: UITextField!
     @IBOutlet var fdVar2: UITextField!
@@ -84,6 +87,12 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         fdResult.autocorrectionType = .No
         fdResult.autocapitalizationType = .None
         fdResult.spellCheckingType = .No
+        
+        //para cuando el teclado aparezca y no quiero que tape el texto de var2 o var3
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsViewController.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsViewController.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -117,6 +126,22 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         fdCons3.text = String(valores["constante3"]!)
         fdCons4.text = String(valores["constante4"]!)
     }
+    
+    //funcion que mueve el view arriba del teclado si var2 o var3 se estan modificando
+    func keyboardWillShow(sender: NSNotification) {
+        
+        if(fdCons2.editing || fdFuncion.editing)
+        {
+            self.view.frame.origin.y = -150
+        }
+        
+    }
+    
+    //funcion que regresa el view como estaba una vez que se quita el teclado
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y = 0
+    }
+    
 
     // MARK: - Navigation
 
