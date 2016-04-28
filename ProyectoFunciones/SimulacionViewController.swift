@@ -30,6 +30,8 @@ class SimulacionViewController: UIViewController {
     @IBOutlet var lb7: UILabel!
     @IBOutlet var lb81: UILabel!
     @IBOutlet var lb82: UILabel!
+    @IBOutlet var lb1101: UILabel!
+    @IBOutlet var lb1102: UILabel!
     
     @IBOutlet var lbVar1Value: UILabel!
     @IBOutlet var lbVar2Value: UILabel!
@@ -115,7 +117,7 @@ class SimulacionViewController: UIViewController {
     
     //si se presiona next la simulacion avanza una vez
     @IBAction func btSiguiente(sender: UIButton) {
-        if instruccion < 9{
+        if instruccion < 10{
             instruccion += 1
         }
         ejecutaInstruccion()
@@ -316,7 +318,7 @@ class SimulacionViewController: UIViewController {
                         })
             case 9:
                 UIView.animateWithDuration(0.5, delay: 0, options: .CurveLinear, animations: {
-                    //self.bgImg.frame = CGRectMake(self.lb81.frame.origin.x,self.lb81.frame.origin.y,self.lb82.frame.origin.x + self.lb82.frame.width - self.lb81.frame.origin.x,self.lb81.frame.height)
+                    self.bgImg.frame = CGRectMake(self.lb1101.frame.origin.x,self.lb1101.frame.origin.y,self.lb1102.frame.origin.x + self.lb1102.frame.width - self.lb1101.frame.origin.x,self.lb1101.frame.height)
                     }, completion: { finished in
                         self.lbVar1Value.text = "\(self.c1)"
                         self.lbVar2Value.text = "\(self.c2)"
@@ -324,8 +326,8 @@ class SimulacionViewController: UIViewController {
                         self.lbF1Value.text = "\(self.c1 + self.cf1)"
                         self.lbF2Value.text = "\(self.c2 + self.cf2)"
                         self.lbResultValue.text = "\(self.c1 + self.cf1 + self.c2 + self.cf2)"
-                        //self.newHighlight = CGRectMake(self.lb81.frame.origin.x,self.lb81.frame.origin.y,self.lb82.frame.origin.x + self.lb82.frame.width - self.lb81.frame.origin.x,self.lb81.frame.height)
-                        //self.bgImg.frame = self.newHighlight!
+                        self.newHighlight = CGRectMake(self.lb1101.frame.origin.x,self.lb1101.frame.origin.y,self.lb1102.frame.origin.x + self.lb1102.frame.width - self.lb1101.frame.origin.x,self.lb1101.frame.height)
+                        self.bgImg.frame = self.newHighlight!
                         })
             
             default: break
