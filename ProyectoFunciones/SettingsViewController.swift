@@ -33,12 +33,15 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var btCancelar: UIButton!
     @IBOutlet weak var btValores: UIButton!
 
+    @IBOutlet var swReferencia1: UISwitch!
+    @IBOutlet var swReferencia2: UISwitch!
+    
     @IBAction func referencia1(sender: UISwitch) {
         referencias[0] = sender.on
     }
     
     @IBAction func referencia2(sender: UISwitch) {
-        referencias[0] = sender.on
+        referencias[1] = sender.on
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +60,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         fdCons2.text = String(valores["constante2"]!)
         fdCons3.text = String(valores["constante3"]!)
         fdCons4.text = String(valores["constante4"]!)
+        swReferencia1.setOn(referencias[0], animated: false)
+        swReferencia2.setOn(referencias[1], animated: false)
         
         //para quitar el teclado con un tap
         let tap = UITapGestureRecognizer(target: self, action: "quitaTeclado")
@@ -179,6 +184,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
             viewInicial.lbResultResult.text = ""
             viewInicial.nombres = nombres
             viewInicial.valores = valores
+            viewInicial.referencias = referencias
         }
         
     }

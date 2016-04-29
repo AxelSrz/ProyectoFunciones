@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     //arreglos para almacenar los nombres de las variables y los valores de las constantes
     var nombres : [String: String] = ["variable1" : "var", "variable2" : "var2", "variable3" : "var3", "funcion" : "function", "varf1" : "f1", "varf2" : "f2", "result" : "result"]
     var valores : [String: Int] = ["constante1" : 5, "constante2" : 5, "constante3" : 5, "constante4" : 5]
+    var referencias = [false, false]
 
     @IBOutlet var lbFuncion: UILabel!
     @IBOutlet var lbVarFunc1: UILabel!
@@ -60,6 +61,7 @@ class ViewController: UIViewController {
             let viewAjustes = segue.destinationViewController as! SettingsViewController
             viewAjustes.nombres = nombres
             viewAjustes.valores = valores
+            viewAjustes.referencias = referencias
         }
         //si se va a la simulacion se actualizan las variables
         else if segue.identifier == "simulacion"{
@@ -75,6 +77,7 @@ class ViewController: UIViewController {
             viewSimulacion.v3 = nombres["variable3"]!
             viewSimulacion.result = nombres["result"]!
             viewSimulacion.funcion = nombres["funcion"]!
+            viewSimulacion.referencias = referencias
         }
     }
     
@@ -88,8 +91,18 @@ class ViewController: UIViewController {
         f2 = valores["constante2"]! + valores["constante4"]!
         resultado = f1 + f2
         lbResultVar3.text = String(resultado)
-        lbResultVar2.text = String(valores["constante2"]!)
-        lbResultVar1.text = String(valores["constante1"]!)
+        if(referencias[1]){
+            lbResultVar2.text = String(f2)
+        }
+        else{
+            lbResultVar2.text = String(valores["constante2"]!)
+        }
+        if(referencias[0]){
+            lbResultVar1.text = String(f1)
+        }
+        else{
+            lbResultVar1.text = String(valores["constante1"]!)
+        }
         lbResultF1.text = String(f1)
         lbResultF2.text = String(f2)
         lbResultResult.text = String(resultado)
@@ -98,8 +111,18 @@ class ViewController: UIViewController {
     //la informacion que se recibe de los ajustes se actualiza
     @IBAction func unwindAjustes(sender: UIStoryboardSegue) {
         lbFuncion.text = nombres["funcion"]!
-        lbVarFunc1.text = nombres["varf1"]!
-        lbVarFunc2.text = nombres["varf2"]!
+        if(referencias[0]){
+            lbVarFunc1.text = "&" + nombres["varf1"]!
+        }
+        else{
+            lbVarFunc1.text = nombres["varf1"]!
+        }
+        if(referencias[1]){
+            lbVarFunc2.text = "&" + nombres["varf2"]!
+        }
+        else{
+            lbVarFunc2.text = nombres["varf2"]!
+        }
         lbPrimeraAsignacionFuncion.text = "\(nombres["varf1"]!) = \(nombres["varf1"]!) + \(valores["constante3"]!);"
         lbSegundaAsignacionFuncion.text = "\(nombres["varf2"]!) = \(nombres["varf2"]!) + \(valores["constante4"]!);"
         lbResultadoFuncion.text = nombres["result"]! + " = \(nombres["varf1"]!) + \(nombres["varf2"]!);"

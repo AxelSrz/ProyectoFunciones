@@ -16,6 +16,9 @@ class SimulacionViewController: UIViewController {
     var c1 = 0, c2 = 0, cf1 = 0, cf2 = 0
     var f1 = "", f2 = "", v1 = "", v2 = "", v3 = "", funcion = "", result = ""
     var newHighlight: CGRect?
+    var hideArrow1 = true
+    var hideArrow2 = true
+    var referencias = [false, false]
 
     @IBOutlet var lb01: UILabel!
     @IBOutlet var lb02: UILabel!
@@ -55,6 +58,8 @@ class SimulacionViewController: UIViewController {
     @IBOutlet weak var lb101: UILabel!
     @IBOutlet var bgImg: UIImageView!
     
+    @IBOutlet var ivFlecha1: UIImageView!
+    @IBOutlet var ivFlecha2: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -80,8 +85,19 @@ class SimulacionViewController: UIViewController {
         lb91.text = v1
         lb92.text = v2
         lb93.text = v3
-        lb10.text = f1
-        lb101.text = f2
+        if(referencias[0]){
+            lb10.text = "&" + f1
+        }
+        else{
+            lb10.text = f1
+        }
+        
+        if(referencias[1]){
+            lb101.text = "&" + f2
+        }
+        else{
+            lb101.text = f2
+        }
         lbNfunc1.text = funcion
         lbNfunc2.text = funcion
         
@@ -98,6 +114,8 @@ class SimulacionViewController: UIViewController {
         lbVar2Value.hidden = true
         lbVar3Value.hidden = true
         lbResultValue.hidden = true
+        ivFlecha1.hidden = true
+        ivFlecha2.hidden = true
         
         ejecutaInstruccion()
     }
@@ -107,6 +125,20 @@ class SimulacionViewController: UIViewController {
         if let highlight = newHighlight {
             bgImg.frame = highlight
             
+        }
+        
+        if hideArrow1 {
+            ivFlecha1.hidden = true
+        }
+        else{
+            ivFlecha1.hidden = false
+        }
+        
+        if hideArrow2 {
+            ivFlecha2.hidden = true
+        }
+        else{
+            ivFlecha2.hidden = false
         }
     }
 
@@ -169,6 +201,8 @@ class SimulacionViewController: UIViewController {
                         self.lbF1Value.hidden = true
                         self.lbF2Value.hidden = true
                         self.lbResultValue.hidden = true
+                        self.hideArrow1 = true
+                        self.hideArrow2 = true
 
                         self.lbVar1Value.text = "-"
                         self.lbVar2Value.text = "-"
@@ -208,6 +242,8 @@ class SimulacionViewController: UIViewController {
                         self.lbNf2.hidden = true
                         self.lbNf1.hidden = true
                         self.lbNresult.hidden = true
+                        self.hideArrow1 = true
+                        self.hideArrow2 = true
                         self.lbVar1Value.text = "\(self.c1)"
                         self.lbVar2Value.text = "\(self.c2)"
                         self.lbVar3Value.text = "-"
@@ -226,16 +262,30 @@ class SimulacionViewController: UIViewController {
 
                     }, completion: { finished in
                         self.lbResultValue.hidden = true
-                        self.lbF1Value.hidden = false
-                        self.lbF2Value.hidden = false
                         self.lbNf2.hidden = false
                         self.lbNf1.hidden = false
                         self.lbNresult.hidden = true
+                        if(self.referencias[0]){
+                            self.lbF1Value.hidden = true
+                            self.hideArrow1 = false
+                        }
+                        else{
+                            self.hideArrow1 = true
+                            self.lbF1Value.hidden = false
+                            self.lbF1Value.text = "\(self.c1)"
+                        }
+                        if(self.referencias[1]){
+                            self.lbF2Value.hidden = true
+                            self.hideArrow2 = false
+                        }
+                        else{
+                            self.hideArrow2 = true
+                            self.lbF2Value.hidden = false
+                            self.lbF2Value.text = "\(self.c2)"
+                        }
                         self.lbVar1Value.text = "\(self.c1)"
                         self.lbVar2Value.text = "\(self.c2)"
                         self.lbVar3Value.text = "-"
-                        self.lbF1Value.text = "\(self.c1)"
-                        self.lbF2Value.text = "\(self.c2)"
                         self.lbResultValue.text = "-"
                         //self.newHighlight = CGRectMake(self.lb31.frame.origin.x,self.lb31.frame.origin.y,self.lb32.frame.origin.x + self.lb32.frame.width - self.lb31.frame.origin.x,self.lb31.frame.height)
                         self.newHighlight = CGRectMake(self.lb41.frame.origin.x,self.lb41.frame.origin.y,self.lb42.frame.origin.x + self.lb42.frame.width - self.lb41.frame.origin.x,self.lb41.frame.height)
@@ -249,16 +299,30 @@ class SimulacionViewController: UIViewController {
 
                     }, completion: { finished in
                         self.lbResultValue.hidden = false
-                        self.lbF1Value.hidden = false
-                        self.lbF2Value.hidden = false
                         self.lbNf2.hidden = false
                         self.lbNf1.hidden = false
                         self.lbNresult.hidden = false
+                        if(self.referencias[0]){
+                            self.lbF1Value.hidden = true
+                            self.hideArrow1 = false
+                        }
+                        else{
+                            self.hideArrow1 = true
+                            self.lbF1Value.hidden = false
+                            self.lbF1Value.text = "\(self.c1)"
+                        }
+                        if(self.referencias[1]){
+                            self.lbF2Value.hidden = true
+                            self.hideArrow2 = false
+                        }
+                        else{
+                            self.hideArrow2 = true
+                            self.lbF2Value.hidden = false
+                            self.lbF2Value.text = "\(self.c2)"
+                        }
                         self.lbVar1Value.text = "\(self.c1)"
                         self.lbVar2Value.text = "\(self.c2)"
                         self.lbVar3Value.text = "-"
-                        self.lbF1Value.text = "\(self.c1)"
-                        self.lbF2Value.text = "\(self.c2)"
                         self.lbResultValue.text = "-"
                         //self.newHighlight = CGRectMake(self.lb41.frame.origin.x,self.lb41.frame.origin.y,self.lb42.frame.origin.x + self.lb42.frame.width - self.lb41.frame.origin.x,self.lb41.frame.height)
                         self.newHighlight = CGRectMake(self.lb5.frame.origin.x,self.lb5.frame.origin.y,self.lb5.frame.width,self.lb5.frame.height)
@@ -271,11 +335,28 @@ class SimulacionViewController: UIViewController {
                     self.bgImg.frame = CGRectMake(self.lb6.frame.origin.x,self.lb6.frame.origin.y,self.lb6.frame.width,self.lb6.frame.height)
 
                     }, completion: { finished in
-                        self.lbVar1Value.text = "\(self.c1)"
+                        if(self.referencias[0]){
+                            self.lbF1Value.hidden = true
+                            self.hideArrow1 = false
+                            self.lbVar1Value.text = "\(self.c1 + self.cf1)"
+                        }
+                        else{
+                            self.hideArrow1 = true
+                            self.lbF1Value.hidden = false
+                            self.lbF1Value.text = "\(self.c1 + self.cf1)"
+                            self.lbVar1Value.text = "\(self.c1)"
+                        }
+                        if(self.referencias[1]){
+                            self.lbF2Value.hidden = true
+                            self.hideArrow2 = false
+                        }
+                        else{
+                            self.hideArrow2 = true
+                            self.lbF2Value.hidden = false
+                            self.lbF2Value.text = "\(self.c2)"
+                        }
                         self.lbVar2Value.text = "\(self.c2)"
                         self.lbVar3Value.text = "-"
-                        self.lbF1Value.text = "\(self.c1 + self.cf1)"
-                        self.lbF2Value.text = "\(self.c2)"
                         self.lbResultValue.text = "-"
                         //self.newHighlight = CGRectMake(self.lb5.frame.origin.x,self.lb5.frame.origin.y,self.lb5.frame.width,self.lb5.frame.height)
                         self.newHighlight = CGRectMake(self.lb6.frame.origin.x,self.lb6.frame.origin.y,self.lb6.frame.width,self.lb6.frame.height)
@@ -288,11 +369,29 @@ class SimulacionViewController: UIViewController {
                     self.bgImg.frame = CGRectMake(self.lb7.frame.origin.x,self.lb7.frame.origin.y,self.lb7.frame.width,self.lb7.frame.height)
 
                     }, completion: { finished in
-                        self.lbVar1Value.text = "\(self.c1)"
-                        self.lbVar2Value.text = "\(self.c2)"
+                        if(self.referencias[0]){
+                            self.lbF1Value.hidden = true
+                            self.hideArrow1 = false
+                            self.lbVar1Value.text = "\(self.c1 + self.cf1)"
+                        }
+                        else{
+                            self.hideArrow1 = true
+                            self.lbF1Value.hidden = false
+                            self.lbF1Value.text = "\(self.c1 + self.cf1)"
+                            self.lbVar1Value.text = "\(self.c1)"
+                        }
+                        if(self.referencias[1]){
+                            self.lbF2Value.hidden = true
+                            self.hideArrow2 = false
+                            self.lbVar2Value.text = "\(self.c2 + self.cf2)"
+                        }
+                        else{
+                            self.hideArrow2 = true
+                            self.lbF2Value.hidden = false
+                            self.lbF2Value.text = "\(self.c2 + self.cf2)"
+                            self.lbVar2Value.text = "\(self.c2)"
+                        }
                         self.lbVar3Value.text = "-"
-                        self.lbF1Value.text = "\(self.c1 + self.cf1)"
-                        self.lbF2Value.text = "\(self.c2 + self.cf2)"
                         self.lbResultValue.text = "-"
                         //self.newHighlight = CGRectMake(self.lb6.frame.origin.x,self.lb6.frame.origin.y,self.lb6.frame.width,self.lb6.frame.height)
                         self.newHighlight = CGRectMake(self.lb7.frame.origin.x,self.lb7.frame.origin.y,self.lb7.frame.width,self.lb7.frame.height)
@@ -305,11 +404,29 @@ class SimulacionViewController: UIViewController {
                     self.bgImg.frame = CGRectMake(self.lb81.frame.origin.x,self.lb81.frame.origin.y,self.lb82.frame.origin.x + self.lb82.frame.width - self.lb81.frame.origin.x,self.lb81.frame.height)
 
                     }, completion: { finished in
-                        self.lbVar1Value.text = "\(self.c1)"
-                        self.lbVar2Value.text = "\(self.c2)"
+                        if(self.referencias[0]){
+                            self.lbF1Value.hidden = true
+                            self.hideArrow1 = false
+                            self.lbVar1Value.text = "\(self.c1 + self.cf1)"
+                        }
+                        else{
+                            self.hideArrow1 = true
+                            self.lbF1Value.hidden = false
+                            self.lbF1Value.text = "\(self.c1 + self.cf1)"
+                            self.lbVar1Value.text = "\(self.c1)"
+                        }
+                        if(self.referencias[1]){
+                            self.lbF2Value.hidden = true
+                            self.hideArrow2 = false
+                            self.lbVar2Value.text = "\(self.c2 + self.cf2)"
+                        }
+                        else{
+                            self.hideArrow2 = true
+                            self.lbF2Value.hidden = false
+                            self.lbF2Value.text = "\(self.c2 + self.cf2)"
+                            self.lbVar2Value.text = "\(self.c2)"
+                        }
                         self.lbVar3Value.text = "-"
-                        self.lbF1Value.text = "\(self.c1 + self.cf1)"
-                        self.lbF2Value.text = "\(self.c2 + self.cf2)"
                         self.lbResultValue.text = "\(self.c1 + self.cf1 + self.c2 + self.cf2)"
                         //self.newHighlight = CGRectMake(self.lb7.frame.origin.x,self.lb7.frame.origin.y,self.lb7.frame.width,self.lb7.frame.height)
                         self.newHighlight = CGRectMake(self.lb81.frame.origin.x,self.lb81.frame.origin.y,self.lb82.frame.origin.x + self.lb82.frame.width - self.lb81.frame.origin.x,self.lb81.frame.height)
@@ -320,11 +437,29 @@ class SimulacionViewController: UIViewController {
                 UIView.animateWithDuration(0.5, delay: 0, options: .CurveLinear, animations: {
                     self.bgImg.frame = CGRectMake(self.lb1101.frame.origin.x,self.lb1101.frame.origin.y,self.lb1102.frame.origin.x + self.lb1102.frame.width - self.lb1101.frame.origin.x,self.lb1101.frame.height)
                     }, completion: { finished in
-                        self.lbVar1Value.text = "\(self.c1)"
-                        self.lbVar2Value.text = "\(self.c2)"
+                        if(self.referencias[0]){
+                            self.lbF1Value.hidden = true
+                            self.hideArrow1 = false
+                            self.lbVar1Value.text = "\(self.c1 + self.cf1)"
+                        }
+                        else{
+                            self.hideArrow1 = true
+                            self.lbF1Value.hidden = false
+                            self.lbF1Value.text = "\(self.c1 + self.cf1)"
+                            self.lbVar1Value.text = "\(self.c1)"
+                        }
+                        if(self.referencias[1]){
+                            self.lbF2Value.hidden = true
+                            self.hideArrow2 = false
+                            self.lbVar2Value.text = "\(self.c2 + self.cf2)"
+                        }
+                        else{
+                            self.hideArrow2 = true
+                            self.lbF2Value.hidden = false
+                            self.lbF2Value.text = "\(self.c2 + self.cf2)"
+                            self.lbVar2Value.text = "\(self.c2)"
+                        }
                         self.lbVar3Value.text = "\(self.c1 + self.cf1 + self.c2 + self.cf2)"
-                        self.lbF1Value.text = "\(self.c1 + self.cf1)"
-                        self.lbF2Value.text = "\(self.c2 + self.cf2)"
                         self.lbResultValue.text = "\(self.c1 + self.cf1 + self.c2 + self.cf2)"
                         self.newHighlight = CGRectMake(self.lb1101.frame.origin.x,self.lb1101.frame.origin.y,self.lb1102.frame.origin.x + self.lb1102.frame.width - self.lb1101.frame.origin.x,self.lb1101.frame.height)
                         self.bgImg.frame = self.newHighlight!
