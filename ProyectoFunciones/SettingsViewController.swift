@@ -14,6 +14,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     var nombres : [String: String] = [:]
     var valores : [String: Int] = [:]
     var referencias = [false, false]
+    
+    //variable que checa cual textfield esta activo
+    var activeField = UITextField()
 
     @IBOutlet var fdVar1: UITextField!
     @IBOutlet var fdVar2: UITextField!
