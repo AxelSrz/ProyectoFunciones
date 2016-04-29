@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //arreglos para los nombres de las variables y los valores de las constantes
     var nombres : [String: String] = [:]
     var valores : [String: Int] = [:]
+    var referencias = [false, false]
 
     @IBOutlet var fdVar1: UITextField!
     @IBOutlet var fdVar2: UITextField!
@@ -29,7 +30,13 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var btCancelar: UIButton!
     @IBOutlet weak var btValores: UIButton!
 
+    @IBAction func referencia1(sender: UISwitch) {
+        referencias[0] = sender.on
+    }
     
+    @IBAction func referencia2(sender: UISwitch) {
+        referencias[0] = sender.on
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
