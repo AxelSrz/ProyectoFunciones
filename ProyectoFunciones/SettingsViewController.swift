@@ -142,7 +142,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     //funcion que mueve el view arriba del teclado si var2 o var3 se estan modificando
     func keyboardWillShow(sender: NSNotification) {
         
-        if(fdCons2.editing || fdFuncion.editing)
+        if(fdCons2.editing || fdFuncion.editing || fdCons1.editing)
         {
             self.view.frame.origin.y = -150
         }
