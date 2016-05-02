@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PracticaViewController: UIViewController {
+class PracticaViewController: UIViewController, UITextFieldDelegate {
 
     //arreglos para almacenar los nombres de las variables y los valores de las constantes
     var c1 = 0, c2 = 0, cf1 = 0, cf2 = 0
@@ -97,6 +97,20 @@ class PracticaViewController: UIViewController {
         lbLlamadaAFuncion.text = funcion
         
         btSimulacion.hidden = true
+        
+        //las labels con constantes se les cambian el tipo de pad
+        tfF1.delegate = self
+        tfF1.keyboardType = .NumberPad
+        tfF2.delegate = self
+        tfF2.keyboardType = .NumberPad
+        tfResult.delegate = self
+        tfResult.keyboardType = .NumberPad
+        tfVar3.delegate = self
+        tfVar3.keyboardType = .NumberPad
+        tfVar2.delegate = self
+        tfVar2.keyboardType = .NumberPad
+        tfVar1.delegate = self
+        tfVar1.keyboardType = .NumberPad
 
     }
     
@@ -123,6 +137,12 @@ class PracticaViewController: UIViewController {
             viewSimulacion.funcion = nombres["funcion"]!
             viewSimulacion.referencias = referencias
         }
+    }
+    
+    //funcion que revisa que haya solo numeros en los text fields de las constantes
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let invalidCharacters = NSCharacterSet(charactersInString: "0123456789").invertedSet
+        return string.rangeOfCharacterFromSet(invalidCharacters, options: [], range: string.startIndex ..< string.endIndex) == nil
     }
     
     //si se presiona el boton calcular
