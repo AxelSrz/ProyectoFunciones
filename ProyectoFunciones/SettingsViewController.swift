@@ -137,6 +137,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         fdCons2.text = String(valores["constante2"]!)
         fdCons3.text = String(valores["constante3"]!)
         fdCons4.text = String(valores["constante4"]!)
+
     }
     
     //funcion que mueve el view arriba del teclado si var2 o var3 se estan modificando
