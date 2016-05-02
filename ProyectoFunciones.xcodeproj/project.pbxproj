@@ -14,6 +14,7 @@
 		D195BFAB1CADACF00040FFEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D195BFA91CADACF00040FFEF /* LaunchScreen.storyboard */; };
 		D195BFB51CB0332A0040FFEF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D195BFB41CB0332A0040FFEF /* SettingsViewController.swift */; };
 		D1C50BA31CBDE616007CB311 /* SimulacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C50BA21CBDE616007CB311 /* SimulacionViewController.swift */; };
+		DB0987891CD738440096A77D /* PracticaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0987881CD738440096A77D /* PracticaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D195BFAC1CADACF00040FFEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D195BFB41CB0332A0040FFEF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D1C50BA21CBDE616007CB311 /* SimulacionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimulacionViewController.swift; sourceTree = "<group>"; };
+		DB0987881CD738440096A77D /* PracticaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				D195BFA01CADACF00040FFEF /* AppDelegate.swift */,
 				D195BFA21CADACF00040FFEF /* ViewController.swift */,
 				D195BFA41CADACF00040FFEF /* Main.storyboard */,
+				DB0987881CD738440096A77D /* PracticaViewController.swift */,
 				D1C50BA21CBDE616007CB311 /* SimulacionViewController.swift */,
 				D195BFA71CADACF00040FFEF /* Assets.xcassets */,
 				D195BFA91CADACF00040FFEF /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB0987891CD738440096A77D /* PracticaViewController.swift in Sources */,
 				D1C50BA31CBDE616007CB311 /* SimulacionViewController.swift in Sources */,
 				D195BFA31CADACF00040FFEF /* ViewController.swift in Sources */,
 				D195BFA11CADACF00040FFEF /* AppDelegate.swift in Sources */,

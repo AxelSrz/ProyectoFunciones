@@ -79,6 +79,25 @@ class ViewController: UIViewController {
             viewSimulacion.funcion = nombres["funcion"]!
             viewSimulacion.referencias = referencias
         }
+        //si va a la practica actualiza las variables
+        else if segue.identifier == "practica"{
+            let viewPractica = segue.destinationViewController as! PracticaViewController
+            viewPractica.c1 = valores["constante1"]!
+            viewPractica.c2 = valores["constante2"]!
+            viewPractica.cf1 = valores["constante3"]!
+            viewPractica.cf2 = valores["constante4"]!
+            viewPractica.f1 = nombres["varf1"]!
+            viewPractica.f2 = nombres["varf2"]!
+            viewPractica.v1 = nombres["variable1"]!
+            viewPractica.v2 = nombres["variable2"]!
+            viewPractica.v3 = nombres["variable3"]!
+            viewPractica.result = nombres["result"]!
+            viewPractica.funcion = nombres["funcion"]!
+            viewPractica.referencias = referencias
+            viewPractica.nombres = self.nombres
+            viewPractica.valores = self.valores
+            viewPractica.referencias = self.referencias
+        }
     }
     
     //si se presiona el boton calcular
@@ -147,7 +166,9 @@ class ViewController: UIViewController {
     
     @IBAction func unwindSimulacion(sender: UIStoryboardSegue) {
     }
-
+    
+    @IBAction func unwindPractica(sender: UIStoryboardSegue) {
+    }
 
 }
 
