@@ -1278,11 +1278,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="162" image="flecha" translatesAutoresizingMaskIntoConstraints="NO" id="isV-a1-zn6">
-                                <rect key="frame" x="690" y="128" width="25" height="162"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="162" image="flecha" translatesAutoresizingMaskIntoConstraints="NO" id="mRl-1l-vEV">
-                                <rect key="frame" x="779" y="128" width="25" height="162"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="162" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="isV-a1-zn6">
+                                <rect key="frame" x="673" y="135" width="41" height="154"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="function" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHz-UE-4lA">
                                 <rect key="frame" x="116" y="385" width="63" height="21"/>
@@ -1290,6 +1287,9 @@
                                 <color key="textColor" red="1" green="0.53366491859999998" blue="0.0029024126999999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="162" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="mRl-1l-vEV">
+                                <rect key="frame" x="752" y="135" width="43" height="154"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.28093609619999999" green="0.27583576069999999" blue="0.29220917019999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1971,8 +1971,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow" width="320" height="640"/>
         <image name="back" width="128" height="128"/>
-        <image name="flecha" width="128" height="128"/>
         <image name="next" width="128" height="128"/>
         <image name="play" width="118" height="128"/>
     </resources>
