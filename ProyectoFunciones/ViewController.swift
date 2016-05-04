@@ -169,6 +169,8 @@ class ViewController: UIViewController {
     
     @IBAction func unwindPractica(sender: UIStoryboardSegue) {
     }
+    @IBAction func unwindInfo(sender: UIStoryboardSegue) {
+    }
 
 }
 
