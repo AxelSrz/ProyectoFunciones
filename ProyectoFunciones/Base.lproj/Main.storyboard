@@ -1256,13 +1256,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="162" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="isV-a1-zn6">
-                                <rect key="frame" x="694" y="135" width="41" height="154"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="41" id="igo-gz-ANC"/>
-                                    <constraint firstAttribute="height" constant="154" id="ntB-Ch-1Yl"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="function" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHz-UE-4lA">
                                 <rect key="frame" x="116" y="385" width="63" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1278,11 +1271,18 @@
                                     <action selector="btSiguiente:" destination="oxl-uZ-WX4" eventType="touchUpInside" id="6Eo-Fm-HyB"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="162" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="mRl-1l-vEV">
-                                <rect key="frame" x="775" y="135" width="43" height="154"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="28" placeholderIntrinsicHeight="162" image="flecha" translatesAutoresizingMaskIntoConstraints="NO" id="mRl-1l-vEV">
+                                <rect key="frame" x="782" y="135" width="28" height="154"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="43" id="Xb7-IG-fa4"/>
                                     <constraint firstAttribute="height" constant="154" id="noF-j1-aoJ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="25" placeholderIntrinsicHeight="162" image="flecha" translatesAutoresizingMaskIntoConstraints="NO" id="isV-a1-zn6">
+                                <rect key="frame" x="700" y="135" width="28" height="154"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="igo-gz-ANC"/>
+                                    <constraint firstAttribute="height" constant="154" id="ntB-Ch-1Yl"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -1968,8 +1968,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow" width="320" height="640"/>
         <image name="back" width="128" height="128"/>
+        <image name="flecha" width="79" height="515"/>
         <image name="next" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
