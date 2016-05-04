@@ -111,7 +111,35 @@ class PracticaViewController: UIViewController, UITextFieldDelegate {
         tfVar2.keyboardType = .NumberPad
         tfVar1.delegate = self
         tfVar1.keyboardType = .NumberPad
+        
+        //para quitar el teclado con un tap
+        let tap = UITapGestureRecognizer(target: self, action: "quitaTeclado")
+        view.addGestureRecognizer(tap)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsViewController.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsViewController.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
 
+    }
+    
+    //funcion que mueve el view arriba del teclado si var2 o var3 se estan modificando
+    func keyboardWillShow(sender: NSNotification) {
+        
+        if(tfVar1.editing || tfVar2.editing || tfVar3.editing)
+        {
+            self.view.frame.origin.y = -150
+        }
+        
+    }
+    
+    //funcion que regresa el view como estaba una vez que se quita el teclado
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y = 0
+    }
+    
+    
+    //funcion para quitar el teclado
+    func quitaTeclado(){
+        view.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
