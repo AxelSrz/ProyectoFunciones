@@ -105,7 +105,7 @@
 				TargetAttributes = {
 					D195BF9C1CADACF00040FFEF = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 2P63U9HZVX;
+						DevelopmentTeam = 2LYZ95BVNV;
 					};
 				};
 			};
@@ -263,8 +263,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ProyectoFunciones/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = axel.ProyectoFunciones;
+				PRODUCT_BUNDLE_IDENTIFIER = axel.ProyectoFunciones.iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -278,8 +279,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ProyectoFunciones/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = axel.ProyectoFunciones;
+				PRODUCT_BUNDLE_IDENTIFIER = axel.ProyectoFunciones.iOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
